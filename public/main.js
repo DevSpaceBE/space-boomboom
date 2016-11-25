@@ -19,7 +19,7 @@ function create() {
     ship.width = 60
     ship.height = 70
     game.physics.p2.enable(ship)
-    console.log(ship.body)
+    ship.body.mass = 1.5
 }
 
 function accelerate() {
