@@ -1,6 +1,6 @@
-const game = new Phaser.Game(800, 600, Phaser.CANVAS, 'game', { create: create, preload: preload })
+const game = new Phaser.Game(800, 600, Phaser.CANVAS, 'game', { preload: preload, create: create, update: update })
 
-let velocity = 0, keyUp, ship
+let velocity = 0, keyUp, ship, cursors
 
 function preload() {
     game.load.image('ship', 'ship.jpg')
@@ -8,19 +8,21 @@ function preload() {
 
 function create() {
     game.physics.startSystem(Phaser.Physics.P2JS)
-    keyUp = game.input.keyboard.addKey(Phaser.Keyboard.UP)
-    keyUp.onHoldCallback = accelerate
-    keyLeft = game.input.keyboard.addKey(Phaser.Keyboard.LEFT)
-    keyLeft.onHoldCallback = turnLeft
-    keyLeft = game.input.keyboard.addKey(Phaser.Keyboard.RIGHT)
-    keyLeft.onHoldCallback = turnRight
+    cursors = game.input.keyboard.createCursorKeys()
 
     ship = game.add.sprite(375, 550, 'ship')
     ship.width = 60
     ship.height = 70
     game.physics.p2.enable(ship)
-    ship.body.mass = 1.5
+    ship.body.mass = 1
 }
+
+function update() {
+  if (cursors.left.isDown) turnLeft()
+  if (cursors.right.isDown) turnRight()
+  if (cursors.up.isDown) accelerate()
+}
+
 
 function accelerate() {
     ship.body.applyImpulseLocal([0, .3], 0, 35)
