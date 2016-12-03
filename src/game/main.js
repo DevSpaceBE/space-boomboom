@@ -6,9 +6,10 @@ import LevelOne from 'game/states/LevelOne'
 class Game extends Phaser.Game {
     constructor () {
         if (window.document.getElementById('game')) window.document.getElementById('game').innerHTML = ''   //Empty #game for hot reload. TODO: improve hot-reload
-        super(800, 600, Phaser.CANVAS, 'game', null)
+        super(800, 600, Phaser.CANVAS, 'game')
         this.state.add('LevelOne', LevelOne, false)
         this.state.start('LevelOne')
+
     }
 }
 
