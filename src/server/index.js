@@ -12,6 +12,4 @@ app.use(webpackHotMiddleware(compiler))
 
 app.use(express.static('public'))
 
-app.listen(2110, function () {
-  console.log('Example app listening on port 2110!')
-})
+app.listen(2110, () => console.log('Example app listening on port 2110!'))

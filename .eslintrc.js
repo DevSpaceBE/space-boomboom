@@ -35,7 +35,12 @@ module.exports = {
         "comma-dangle": [ "off" ],
         "no-console": [ "off" ],
         "no-unused-vars": [ warnOrError ],
-
+        "no-multi-spaces": [ warnOrError ],
+        "space-before-function-paren": [ warnOrError, {
+            "anonymous": "always",
+            "named": "never",
+            "asyncArrow": "always"
+        } ],
         "object-curly-spacing": [ warnOrError, "always" ],
         "comma-spacing": [ warnOrError, {
           "before": false,

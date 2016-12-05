@@ -5,7 +5,7 @@ import Boot from 'game/states/Boot'
 import LevelOne from 'game/states/LevelOne'
 
 class Game extends Phaser.Game {
-  constructor () {
+  constructor() {
     // Empty #game for hot reload. TODO: improve hot-reload
     if (window.document.getElementById('game'))
       window.document.getElementById('game').innerHTML = ''

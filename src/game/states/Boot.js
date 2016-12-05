@@ -12,7 +12,7 @@ export default class extends Phaser.State {
 
   create() {}
 
-  render () {
+  render() {
     this.state.start('LevelOne')
   }
 }

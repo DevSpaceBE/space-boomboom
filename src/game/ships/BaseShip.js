@@ -1,7 +1,7 @@
 import Phaser from 'phaser'
 
 class BaseShip extends Phaser.Sprite {
-  constructor (game, x, y, asset, width, height) {
+  constructor(game, x, y, asset, width, height) {
     super(game, x, y, asset)
     this.game = game
     this.width = width
