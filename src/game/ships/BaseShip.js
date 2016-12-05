@@ -1,6 +1,6 @@
 import Phaser from 'phaser'
 
-export default class extends Phaser.Sprite {
+class BaseShip extends Phaser.Sprite {
     constructor (game, x, y, asset, width, height) {
         super(game, x, y, asset)
         this.game = game
@@ -25,3 +25,5 @@ export default class extends Phaser.Sprite {
         this.body.applyImpulseLocal(...this.turnRightParams)
     }
 }
+
+export default BaseShip
